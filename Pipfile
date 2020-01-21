@@ -9,6 +9,8 @@ verify_ssl = true
 django = "*"
 channels = "*"
 django-phone-field = "*"
+django-crispy-forms = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"

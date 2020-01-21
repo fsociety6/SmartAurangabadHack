@@ -5,21 +5,30 @@
 {% endblock css %}
 
 {% block content %}
-<div class="col-xl-4">
+<div class="col-xl-8">
           <div class="card shadow">
             <div class="card-header border-0">
               <div class="row align-items-center">
                 <div class="col">
-                  <h3 class="mb-0">Social traffic</h3>
+                  <h3 class="mb-0">Symptoms {{req}} </h3>
                 </div>
-                <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                </div>
+                
               </div>
             </div>
             <div class="card-body ">
-              <form action="" method="post">
-              </form>
+            <form action="" method="post">
+            <div class="form-group">
+              
+              {% csrf_token %}
+              <select class="custom-select" multiple="multiple" id='symptoms' name='sym'>
+{% for s in sym %}
+<option value="{{s.ID1}}">{{s.name}}</option>
+{% endfor %}
+</select>
+   
+            </div>
+             <button type="submit" class="btn btn-primary">Sumbit</button>
+                          </form>
             </div>
           </div>
         </div>
@@ -27,4 +36,12 @@
 
 {% block js %}
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
+<script>
+
+$('#symptoms').select2({
+  placeholder: 'Select a Symptoms',
+  maximumSelectionLength: 5
+});
+</script>
+
 {% endblock js %}
