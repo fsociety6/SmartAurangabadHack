@@ -7,7 +7,7 @@ class ExtendedUserModel(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=20)
     location = models.DecimalField(max_digits=6, decimal_places=0)
-    phone_number = PhoneField(max_length=10)
+    phone_number = models.DecimalField(max_digits=10, decimal_places=0)
     user_object = models.OneToOneField(User, related_name='extended_user', on_delete=models.CASCADE)
 
     def __str__(self):
