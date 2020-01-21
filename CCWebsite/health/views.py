@@ -151,6 +151,7 @@ def home(request):
 
 
 def dashboard(request):
+    print(request.user.extended_user.__class__.__name__)
     return render(request, template_name='health/index.html')
 
 
