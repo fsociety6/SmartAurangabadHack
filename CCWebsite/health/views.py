@@ -13,4 +13,4 @@ def home(request):
     return HttpResponse(l)
 
 def dashboard(request):
-    pass
+    return render(request,template_name='health/index.html')
