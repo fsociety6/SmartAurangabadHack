@@ -1,0 +1,20 @@
+<div style="padding:5% 40%">
+<form method="POST">
+    {% csrf_token %}
+    <table style="border-collapse:separate;border-spacing: 10px">
+    {% for i in form %} 
+    {% comment %} {% if "Username" in i.label_tag %} 
+    <tr style="display:None"><td>{{i}}</td></tr>
+    {% else %} {% endcomment %}
+
+    <tr><td>{{ i.label_tag }}</td>
+    <td>{{i}}</td></tr>
+    
+
+    {% comment %} {% endif %} {% endcomment %}
+    {% endfor %}
+    </table>
+    <br><br>
+    <button type="submit" style="background:rgb(5, 5, 87);color: antiquewhite">Save</button>
+</form>
+</div>
