@@ -6,7 +6,7 @@ from phone_field import PhoneField
 class ExtendedUserModel(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=20)
-    location = models.IntegerField(max_length=6)
+    location = models.DecimalField(max_digits=6, decimal_places=0)
     phone_number = PhoneField(max_length=10)
     user_object = models.OneToOneField(User, related_name='extended_user', on_delete=models.CASCADE)
 
