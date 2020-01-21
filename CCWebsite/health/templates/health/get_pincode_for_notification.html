@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pincode For Notification</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="pincode">
+    <input type="submit" value="submit pincode">
+</form>
+</body>
+</html>
