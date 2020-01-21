@@ -14,3 +14,6 @@ def home(request):
 
 def dashboard(request):
     return render(request,template_name='health/index.html')
+
+def disease(request):
+    return render(request,template_name='health/symptoms.html')
