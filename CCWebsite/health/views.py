@@ -156,9 +156,8 @@ def home(request):
 
 def dashboard(request):
     # users=ExtendedUserModel.objects.filter(user_object_id=request.user.id)
-    users=User.extended_user
-    print(request.user.extended_user)
-    return render(request,'health/index.html',{'users':users})
+    # users=user.mo
+    return render(request,'health/index.html')
 
 def disease(request):
     if request.method=='GET':
