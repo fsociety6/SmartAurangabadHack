@@ -13,7 +13,7 @@ def home(request):
     return HttpResponse('chat home')
 
 
-from health.models import Disease
+from health.models import Disease, Crowdsource
 
 
 # Create your views here.
@@ -155,7 +155,7 @@ def home(request):
 
 
 def dashboard(request):
-    data=ExtendedUserModel.objects.get(user_object=request.user.id)
+    data=Crowdsource.objects.filter(location=12)
     return render(request,'health/index.html',{'data':data})
 
 def disease(request):

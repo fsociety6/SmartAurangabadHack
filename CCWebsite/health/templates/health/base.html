@@ -94,6 +94,10 @@
             </li>
         </ul>
         <!-- Collapse -->
+
+        </li>
+        </ul>
+        <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Collapse header -->
             <div class="navbar-collapse-header d-md-none">
@@ -113,52 +117,6 @@
                     </div>
                 </div>
             </div>
-          </a>
-          <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-            <div class=" dropdown-header noti-title">
-              <h6 class="text-overflow m-0">Welcome!</h6>
-            </div>
-            <a href="templates/health/profile.html" class="dropdown-item">
-              <i class="ni ni-single-02"></i>
-              <span>My profile</span>
-            </a>
-            <a href="./examples/profile.html" class="dropdown-item">
-              <i class="ni ni-settings-gear-65"></i>
-              <span>Settings</span>
-            </a>
-            <a href="./examples/profile.html" class="dropdown-item">
-              <i class="ni ni-calendar-grid-58"></i>
-              <span>Activity</span>
-            </a>
-            <a href="./examples/profile.html" class="dropdown-item">
-              <i class="ni ni-support-16"></i>
-              <span>Support</span>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
-              <i class="ni ni-user-run"></i>
-              <span>Logout</span>
-            </a>
-          </div>
-        </li>
-      </ul>
-      <!-- Collapse -->
-      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-        <!-- Collapse header -->
-        <div class="navbar-collapse-header d-md-none">
-          <div class="row">
-            <div class="col-6 collapse-brand">
-              <a href="./index.html">
-                <h1 class='h1'>H-SOCIETY</h1>
-              </a>
-            </div>
-            <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-          </div>
         </div>
     </div>
 </nav>
@@ -247,132 +205,145 @@
 
                             </div>
                         </div>
-      <div class="container-fluid">
-        <div class="header-body">
-          <!-- Card stats -->
-          <div class="row">
-            <div class="col-xl-4 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Gender</h5>
-                      <span class="h2 font-weight-bold mb-0">{{data.gender}}</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-6">
-              <div class="card card-stats mb-4 mb-xl-0">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Age</h5>
-                      <span class="h2 font-weight-bold mb-0">{{data.age}}</span>
-                    </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="header-body">
+                                <!-- Card stats -->
                                 <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Age</h5>
-                                        <span class="h2 font-weight-bold mb-0">20</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                            <i class="fas fa-chart-pie"></i>
+                                    <div class="col-xl-4 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">
+                                                            Gender</h5>
+                                                        <span class="h2 font-weight-bold mb-0">{{data.gender}}</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                                            <i class="fas fa-chart-bar"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col-xl-4 col-lg-6">
+                                        <div class="card card-stats mb-4 mb-xl-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h5 class="card-title text-uppercase text-muted mb-0">Age</h5>
+                                                        <span class="h2 font-weight-bold mb-0">{{data.age}}</span>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                            <i class="fas fa-chart-pie"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6">
+                                                        <div class="card card-stats mb-4 mb-xl-0">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <h5 class="card-title text-uppercase text-muted mb-0">
+                                                                            Age</h5>
+                                                                        <span class="h2 font-weight-bold mb-0">20</span>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                                            <i class="fas fa-chart-pie"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6">
-                        <div class="card card-stats mb-4 mb-xl-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">AQI</h5>
-                                        <span class="h2 font-weight-bold mb-0">9</span>
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                            <i class="fas fa-users"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6">
+                                                        <div class="card card-stats mb-4 mb-xl-0">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <h5 class="card-title text-uppercase text-muted mb-0">
+                                                                            AQI</h5>
+                                                                        <span class="h2 font-weight-bold mb-0">9</span>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                                            <i class="fas fa-users"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="container-fluid mt--7">
+                                        <div class="row">
+                                            {% block content %}
 
+                                            {% endblock content %}
+                                        </div>
+                                    </div>
+                                    <!-- Footer -->
+                                    <footer class="footer">
+                                        <div class="row align-items-center justify-content-xl-between">
+                                            <div class="col-xl-6">
+                                                <div class="copyright text-center text-xl-left text-muted">
+                                                    &copy; 2018 <a href="https://www.creative-tim.com"
+                                                                   class="font-weight-bold ml-1" target="_blank">Creative
+                                                    Tim</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <ul class="nav nav-footer justify-content-center justify-content-xl-end">
+                                                    <li class="nav-item">
+                                                        <a href="https://www.creative-tim.com" class="nav-link"
+                                                           target="_blank">Creative Tim</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="https://www.creative-tim.com/presentation"
+                                                           class="nav-link" target="_blank">About
+                                                            Us</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="http://blog.creative-tim.com" class="nav-link"
+                                                           target="_blank">Blog</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
+                                                           class="nav-link" target="_blank">MIT License</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
                             </div>
+                            <!--   Core   -->
+                            <script src="/static/argon/assets/js/plugins/jquery/dist/jquery.min.js"></script>
+                            <script src="/static/argon/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                            <!--   Optional JS   -->
+                            <script src="/static/argon/assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+                            <script src="/static/argon/assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+                            <!--   Argon JS   -->
+                            <script src="/static/argon/assets/js/argon-dashboard.min.js?v=1.1.1"></script>
+
+                            {% block js %}
+                            {% endblock js %}
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt--7">
-        <div class="row">
-            {% block content %}
-
-            {% endblock content %}
-        </div>
-    </div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="row align-items-center justify-content-xl-between">
-            <div class="col-xl-6">
-                <div class="copyright text-center text-xl-left text-muted">
-                    &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative
-                    Tim</a>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-                    <li class="nav-item">
-                        <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About
-                            Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md"
-                           class="nav-link" target="_blank">MIT License</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 </div>
-</div>
-<!--   Core   -->
-<script src="/static/argon/assets/js/plugins/jquery/dist/jquery.min.js"></script>
-<script src="/static/argon/assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!--   Optional JS   -->
-<script src="/static/argon/assets/js/plugins/chart.js/dist/Chart.min.js"></script>
-<script src="/static/argon/assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
-<!--   Argon JS   -->
-<script src="/static/argon/assets/js/argon-dashboard.min.js?v=1.1.1"></script>
-
-{% block js %}
-{% endblock js %}
-
 </body>
 
 </html>

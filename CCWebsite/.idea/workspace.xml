@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="114f9411-c340-464d-a3b5-220f9854ebc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/health/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/health/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/health/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health/templates/health/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/health/templates/health/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/health/templates/health/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/health/templates/health/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/health/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/health/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
