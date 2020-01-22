@@ -1,29 +1,49 @@
 {% extends 'health/base.html' %}
 
 {% block content %}
-<div class="col-lg-6">
- <div id="map"></div></div>
+<div class="col-xl-4">
+    <div class="card shadow">
+        <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
+                    <h2 class="mb-0">Total orders</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Chart -->
+            <div class="chart">
+                <canvas id="myChart" class="chart-canvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
 
 {% block js %}
- <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'bar',
+
+// The data for our dataset
+data: {
+labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+datasets: [{
+label: 'My First dataset',
+backgroundColor: 'rgb(255, 99, 132)',
+borderColor: 'rgb(255, 99, 132)',
+data: [0, 10, 5, 2, 20, 30, 45]
+}]
+},
+
+// Configuration options go here
+options: {
+responsive:true,
 }
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2C26s5vBGXu3FZsLPpxMZZ4EiBSvH-Jc&callback=initMap">
-    </script>
+});
+
+</script>
 {% endblock js %}
