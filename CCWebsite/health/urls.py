@@ -7,5 +7,6 @@ urlpatterns = [
     path('symptoms/',views.disease),
     path('notification/', views.notifications),
     path('dashboard/edit',views.edit_profile,name="edit"),
+    path('map/',views.maps)
 
 ]

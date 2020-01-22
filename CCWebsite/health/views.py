@@ -187,3 +187,6 @@ def edit_profile(request):
         form.save()
         return redirect(dashboard)
     return render(request, 'health/edit.html', {'form': form})
+
+def maps(request):
+    return render(request,'health/maps.html')

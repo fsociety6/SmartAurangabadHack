@@ -1,1 +1,85 @@
-{% extends 'home_page/home.html' %}
+{% extends 'health/base.html' %}
+
+{% block css %}
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+{% endblock css %}
+
+{% block content %}
+<div class="col-lg-8">
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+</div>
+<div class="col-lg-4" id='info'>
+</div>
+
+{% endblock content %}
+
+
+{% block js %}
+<script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'HdR79nQeGMgJDJ2NUHcLakeKJ_xo7AvPNj9V1ax65yA'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 15,
+          center: { lat: 19.87, lng: 75.34 }
+        });
+    </script>
+    <script>fetch('https://places.sit.ls.hereapi.com/places/v1/autosuggest?apiKey=HdR79nQeGMgJDJ2NUHcLakeKJ_xo7AvPNj9V1ax65yA&at=19.87,75.34&q=hospital')
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    console.log(myJson);
+    console.log(myJson.results)
+    for (let ig in myJson.results){
+        console.log(ig)
+        $('#info'). append('<div class="pb-4"><div class="card card-stats mb-4 mb-lg-0"><div class="card-body"><div class="row"><div class="col"><h5 class="card-title text-uppercase text-muted mb-0">'+myJson.results[ig].title+'</h5><span class="h4 font-weight-bold mb-0">'+myJson.results[ig].vicinity+'</span></div><div class="col-auto"></p></div></div></div>');
+    }
+  });</script>
+{% endblock js %}
+{% comment %} <html>
+  <head>
+  
+  </head>
+  <body>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'HdR79nQeGMgJDJ2NUHcLakeKJ_xo7AvPNj9V1ax65yA'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 15,
+          center: { lat: 19.87, lng: 75.34 }
+        });
+    </script>
+    <script>fetch('https://places.sit.ls.hereapi.com/places/v1/autosuggest?apiKey=HdR79nQeGMgJDJ2NUHcLakeKJ_xo7AvPNj9V1ax65yA&at=19.87,75.34&q=hospital')
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    console.log(myJson);
+  });</script>
+  </body>
+</html> {% endcomment %}
