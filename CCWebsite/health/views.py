@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import requests
 from django.contrib.auth.models import User
 from account.models import ExtendedUserModel
+from account.forms import EditForm
 
 # Create your views here.
 from account.models import ExtendedUserModel
@@ -154,10 +155,8 @@ def home(request):
 
 
 def dashboard(request):
-    extended_user_data = request.user.extended_user
-    bar_chart_data = ExtendedUserModel.objects.all()
-    return render(request, 'health/index.html')
-
+    data=ExtendedUserModel.objects.get(user_object=request.user.id)
+    return render(request,'health/index.html',{'data':data})
 
 def disease(request):
     if request.method == 'GET':
@@ -175,3 +174,11 @@ def notifications(request):
         user_list_object = ExtendedUserModel.objects.filter(location=pincode).values('phone_number')
         return HttpResponse(user_list_object)
     return render(request, 'health/get_pincode_for_notification.html')
+
+def edit_profile(request):
+    instance = ExtendedUserModel.objects.get(user_object=request.user.id)
+    form = EditForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect(dashboard)
+    return render(request, 'health/edit.html', {'form': form})
