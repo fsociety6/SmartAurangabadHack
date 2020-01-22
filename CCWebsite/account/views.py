@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import LoginForm, UserExtendedForm, UserForm
 from django.http import HttpResponse
 
@@ -31,7 +31,7 @@ def user_login_view(request):
             user = authenticate(username=cd['username'], password=cd['password'])
             if user is not None:
                 login(request, user)
-                return HttpResponse("Login SuccessFully !!!")
+                return redirect('/dashboard')
             else:
                 return HttpResponse("UnSuccessFully Login !!!")
     else:

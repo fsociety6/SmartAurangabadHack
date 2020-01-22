@@ -1,9 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 import requests
 from django.contrib.auth.models import User
 from account.models import ExtendedUserModel
-
 
 # Create your views here.
 from account.models import ExtendedUserModel
@@ -155,18 +154,18 @@ def home(request):
 
 
 def dashboard(request):
-    # users=ExtendedUserModel.objects.filter(user_object_id=request.user.id)
-    # users=user.mo
-    return render(request,'health/index.html')
+    extended_user_data = request.user.extended_user
+    bar_chart_data = ExtendedUserModel.objects.all()
+    return render(request, 'health/index.html')
+
 
 def disease(request):
-    if request.method=='GET':
-        symptoms=Disease.objects.all()
-        return render(request,'health/symptoms.html',{'sym':symptoms})
-    if request.method=='POST':
+    if request.method == 'GET':
+        symptoms = Disease.objects.all()
+        return render(request, 'health/symptoms.html', {'sym': symptoms})
+    if request.method == 'POST':
         # symptoms=Disease.objects.all()
-        sym=request.POST.getlist('sym')
-        print(r.text())
+        sym = request.POST.getlist('sym')
         return redirect('/symptoms/')
 
 
