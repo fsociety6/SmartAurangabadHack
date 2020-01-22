@@ -27,11 +27,17 @@
 </select>
    
             </div>
-             <button type="submit" class="btn btn-primary">Sumbit</button>
-                          </form>
+               </form>
+             <button onClick='find()' class="btn btn-primary">Sumbit</button>
+              <button class="btn btn-primary" >Clear</button>         
             </div>
           </div>
         </div>
+
+    <div class="col-lg-4">
+    <div id="info">
+    </div>
+    </div>
 {% endblock content %}
 
 {% block js %}
@@ -44,4 +50,32 @@ $('#symptoms').select2({
 });
 </script>
 
+ <script>
+
+ function find(){
+   //es = []; 
+   //{% comment %} selectElement = document.querySelector('#symptoms');  {% endcomment %}
+ output=$('#symptoms').val(); 
+ var b = output.map(function (x) { 
+  return parseInt(x, 10); 
+});
+console.log(b);
+arr=''+b+'';
+
+JSON.stringify(arr);
+ console.log(arr);
+ fetch('https://healthservice.priaid.ch/diagnosis?symptoms=['+b+']&gender=male&year_of_birth=2000&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InB1c2hwYWsxMzAwQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiMzY3MSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjEwOSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiIxMDAiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJCYXNpYyIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGFuZ3VhZ2UiOiJlbi1nYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6IjIwOTktMTItMzEiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXBzdGFydCI6IjIwMjAtMDEtMjEiLCJpc3MiOiJodHRwczovL2F1dGhzZXJ2aWNlLnByaWFpZC5jaCIsImF1ZCI6Imh0dHBzOi8vaGVhbHRoc2VydmljZS5wcmlhaWQuY2giLCJleHAiOjE1Nzk3MDA4NTcsIm5iZiI6MTU3OTY5MzY1N30.Q9NQzeGmG7j0fQNwCWbB_TBFHghbHeX58XJXaK9mJkE&format=json&language=en-gb')
+  .then((response) => {
+    return response.json();
+  })
+  .then((myJson) => {
+    console.log(myJson);
+    console.log(myJson[0].Issue)
+    for (let ig in myJson){
+        console.log(ig)
+      $('#info'). append('<div class="pb-4"><div class="card card-stats mb-4 mb-lg-0"><div class="card-body"><div class="row"><div class="col"><h5 class="card-title text-uppercase text-muted mb-0">'+myJson[ig].Specialisation[0].Name+'</h5><span class="h4 font-weight-bold mb-0">'+myJson[ig].Issue.Name+'</span></div><div class="col-auto"></p></div></div></div>');
+    }
+  });
+ }
+ </script>
 {% endblock js %}

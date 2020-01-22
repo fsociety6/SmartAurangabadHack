@@ -1,13 +1,12 @@
 {% extends 'health/base.html' %}
 
 {% block content %}
-<div class="col-xl-4">
+<div class="col-xl-12">
     <div class="card shadow">
         <div class="card-header bg-transparent">
             <div class="row align-items-center">
                 <div class="col">
-                    <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                    <h2 class="mb-0">Total orders</h2>
+                    <h6 class="text-uppercase text-muted ls-1 mb-1">Regional Statistics</h6>
                 </div>
             </div>
         </div>
@@ -30,12 +29,12 @@ type: 'bar',
 
 // The data for our dataset
 data: {
-labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+labels: ['Maleria', 'Dengue', 'Typhoid', 'Flu', 'Cold', 'Yellow Fever'],
 datasets: [{
 label: 'My First dataset',
 backgroundColor: 'rgb(255, 99, 132)',
 borderColor: 'rgb(255, 99, 132)',
-data: [0, 10, 5, 2, 20, 30, 45]
+data: [0, 10, 5, 2, 20, 30]
 }]
 },
 

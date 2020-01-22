@@ -157,15 +157,16 @@ def home(request):
 def dashboard(request):
     # users=ExtendedUserModel.objects.filter(user_object_id=request.user.id)
     # users=user.mo
-    # data=ExtendedUserModel.objects.get(user_object=request.user)
+    dat=ExtendedUserModel.objects.get(user_object=request.user)
 
     data=Crowdsource.objects.filter(location=12)
-    return render(request,'health/index.html',{'data':data})
+    return render(request,'health/index.html',{'data':data,'dat':dat})
 
 def disease(request):
     if request.method == 'GET':
         symptoms = Disease.objects.all()
-        return render(request, 'health/symptoms.html', {'sym': symptoms})
+        dat=ExtendedUserModel.objects.get(user_object=request.user)
+        return render(request, 'health/symptoms.html', {'sym': symptoms,'dat':dat})
     if request.method == 'POST':
         # symptoms=Disease.objects.all()
         sym = request.POST.getlist('sym')
@@ -188,4 +189,5 @@ def edit_profile(request):
     return render(request, 'health/edit.html', {'form': form})
 
 def maps(request):
-    return render(request,'health/maps.html')
+    dat=ExtendedUserModel.objects.get(user_object=request.user)
+    return render(request,'health/maps.html',{'dat':dat})
