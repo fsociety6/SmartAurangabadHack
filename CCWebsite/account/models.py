@@ -4,8 +4,9 @@ from phone_field import PhoneField
 
 
 class ExtendedUserModel(models.Model):
+    choice=[('MALE','Male'),('FEMALE','Female')]
     age = models.IntegerField()
-    gender = models.CharField(max_length=20)
+    gender = models.CharField(max_length=20,choices=choice)
     location = models.DecimalField(max_digits=6, decimal_places=0)
     phone_number = models.DecimalField(max_digits=10, decimal_places=0)
     user_object = models.OneToOneField(User, related_name='extendeduser', on_delete=models.CASCADE)

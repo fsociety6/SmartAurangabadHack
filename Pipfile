@@ -11,6 +11,7 @@ channels = "*"
 django-phone-field = "*"
 django-crispy-forms = "*"
 requests = "*"
+faker = "*"
 
 [requires]
 python_version = "3.6"
